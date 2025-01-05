@@ -12,7 +12,7 @@ deploy:
         namespace: meilisearch
         version: 0.11.0
         setValues:
-          replicaCount: 3
+          replicaCount: 1 # Meilisearch does not support replicas (https://github.com/meilisearch/meilisearch-kubernetes/issues/25)
           resources:
             requests:
               memory: "512Mi"
