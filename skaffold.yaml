@@ -1,0 +1,29 @@
+apiVersion: skaffold/v4beta1
+kind: Config
+metadata:
+  name: meilisearch
+deploy:
+  helm:
+    releases:
+      - name: meilisearch
+        repo: https://meilisearch.github.io/meilisearch-kubernetes
+        remoteChart: meilisearch
+        createNamespace: true
+        namespace: meilisearch
+        version: 0.11.0
+        setValues:
+          replicaCount: 3
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "1Gi"
+              cpu: "500m"
+          persistence:
+            enabled: true
+            size: 10Gi
+            storageClass: "openebs-hostpath"
+          service:
+            type: ClusterIP
+            port: 7700
