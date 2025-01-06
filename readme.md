@@ -2,6 +2,18 @@
 
 [Reference](https://github.com/meilisearch/meilisearch-kubernetes)
 
+## Quick Start
+
+```bash
+# Deploy Meilisearch
+skaffold run
+
+# Check the status of the pods
+ kubectl get pods -n meilisearch 
+NAME            READY   STATUS    RESTARTS   AGE
+meilisearch-0   1/1     Running   0          28h
+```
+
 ## Data Modeling
 
 Here's a potential data model design for a "Search" feature on a website:
