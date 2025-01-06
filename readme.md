@@ -79,19 +79,19 @@ With this design, the application might be structured like this:
 
 ```bash
 ┌───────────────┐
-│   Frontend              │
-│ (UI / Client)           │
+│   Frontend    │
+│ (UI / Client) │
 └──────┬────────┘
        │  (1) ConnectRPC + Protobuf
        │
 ┌──────▼────────┐
-│    Backend              │
-│ (Search Svc)            │
+│    Backend    │
+│ (Search Svc)  │
 └──────┬────────┘
        │  (2) REST + JSON
        │
 ┌──────▼────────┐
-│ Meilisearch             │
+│ Meilisearch   │
 └───────────────┘
 ```
 
